@@ -1,5 +1,5 @@
 # 概要
-アプリ [FlexConsole_for_Bluetooth_Serial](https://github.com/UGOKU-Lab/FlexConsole_for_Bluetooth_Serial) をESP32で使用するためのArduinoサンプルです。
+Android用Consoleアプリ [FlexConsole_for_Bluetooth_Serial](https://github.com/UGOKU-Lab/FlexConsole_for_Bluetooth_Serial) をESP32で使用するためのArduinoサンプルです。
 
 # 使用ライブラリ
 - Arduino標準ライブラリ
