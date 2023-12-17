@@ -1,4 +1,7 @@
 # 概要
-[Flex](https://github.com/UGOKU-Lab/FlexConsole_for_Bluetooth_Serial)https://github.com/UGOKU-Lab/FlexConsole_for_Bluetooth_Serial
+アプリ [Flex](FlexConsole_for_Bluetooth_Serial)https://github.com/UGOKU-Lab/FlexConsole_for_Bluetooth_Serial をESP32で使用するためのArduinoサンプルです。
 
-# 使い方
+# 使用ライブラリ
+
+
+https://www.arduino.cc/reference/en/libraries/esp32servo/
