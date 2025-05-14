@@ -9,7 +9,7 @@ FlexConsole_Controller::FlexConsole_Controller(void){
 }
 void FlexConsole_Controller::set_serialBT(char *device_name,const char *pin){
   SBT.begin(device_name);
-  SBT.setPin(pin);
+  //SBT.setPin(pin);
   return;
 }
 
