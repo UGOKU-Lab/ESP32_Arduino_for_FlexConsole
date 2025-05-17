@@ -10,6 +10,8 @@ Servo servo1;
 Servo servo2;
 
 float duty = 0.0f;
+float x = 0.0f;
+float y = 0.0f;
 
 void setup() {
   // put your setup code here, to run once:
@@ -27,6 +29,12 @@ void setup() {
   pinMode(2, OUTPUT);  
   pinMode(4, OUTPUT);
   pinMode(23, OUTPUT);  
+
+  //FET
+  pinMode(12, OUTPUT);  
+
+  //ADC
+  pinMode(39, INPUT);  
 }
 
 void loop() {
@@ -42,6 +50,8 @@ void loop() {
   switch (CH) {
     case 1: // LED control
       digitalWrite(2, (VAL == 1) ? LOW : HIGH);
+      digitalWrite(4, (VAL == 1) ? LOW : HIGH);
+      digitalWrite(23, (VAL == 1) ? LOW : HIGH);
       break;
     case 2: // Servo 1
       servo1.write(VAL);
@@ -50,16 +60,22 @@ void loop() {
       servo2.write(VAL);
       break;
     case 4: // Motor 1
-      duty = (VAL / 127.5f) - 1.0f;
-      MotorDriver_setSpeed(MD1, duty);
+      x = (VAL / 127.5f) - 1.0f;
+      //MotorDriver_setSpeed(MD1, duty);
       break;
     case 5: // Motor 2
-      duty = (VAL / 127.5f) - 1.0f;
-      MotorDriver_setSpeed(MD2, duty);
+      y = (VAL / 127.5f) - 1.0f;
+      //MotorDriver_setSpeed(MD2, duty);
+      break;
+    case 7: //FET
+      digitalWrite(12, (VAL == 1) ? LOW : HIGH);
       break;
   }
 
-  int psd = analogRead(26);
+  MotorDriver_setSpeed(MD1, y+x);
+  MotorDriver_setSpeed(MD2, y-x);
+
+  int psd = analogRead(39);
   float dist = 1 / (float)psd * 30000;
   int dist_int = (int)dist;
   test.write_data(6,dist_int);
