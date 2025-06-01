@@ -9,7 +9,7 @@ static const int MD2_IN1 = 5;
 static const int MD2_IN2 = 13;
 
 // PWM configuration
-static const int PWM_FREQ = 15000; // 20 kHz
+static const int PWM_FREQ = 20000; // 20 kHz
 static const int PWM_RES  = 8;     // 8-bit resolution (0–255)
 
 // LEDC channels
